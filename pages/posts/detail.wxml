@@ -1,0 +1,15 @@
+<!--pages/posts/detail.wxml-->
+<import src="../../libs/wxParse/wxParse.wxml" />
+<view class="container" wx:if="{{infoData}}">
+  <view class="posts-info">
+    <view class="-title">{{infoData.title || '-'}}</view>
+    <view class="-meta"><text>{{infoData.date || '-'}}</text></view>
+    <view class="-desc" wx:if="{{infoData.excerpt}}"><text>{{infoData.excerpt || '~'}}</text></view>
+    <block wx:if="{{hasProtected}}">
+      <input type="text" placeholder="请输入文章密码" class="posts-protect" value="{{postsPwd}}" bindinput="bindPwd" confirm-type="done" bindconfirm="getArticle"></input>
+    </block>
+    <view class="-content">
+      <template is="wxParse" data="{{wxParseData: infoContent.nodes}}" />
+    </view>
+  </view>
+</view>

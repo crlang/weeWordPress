@@ -1,0 +1,10 @@
+<template name="nonePageTip">
+  <!-- 功能开发提示 Start -->
+  <view class="da-coding">
+    <image class="da-coding-icon" src="/images/icon_coding.png" />
+    <view class="da-coding-tip">
+      功能开发中...
+    </view>
+  </view>
+  <!-- 功能开发提示 End -->
+</template>

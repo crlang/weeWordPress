@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/topic/index",
+    "pages/member/index",
+    "pages/retry/index",
+    "pages/posts/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeeWPress+",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#00CEC9",
+    "backgroundColor": "#fafafa",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tb_home.png",
+        "selectedIconPath": "images/tb_home_active.png"
+      },
+      {
+        "pagePath": "pages/topic/index",
+        "text": "专题",
+        "iconPath": "images/tb_topic.png",
+        "selectedIconPath": "images/tb_topic_active.png"
+      },
+      {
+        "pagePath": "pages/member/index",
+        "text": "我的",
+        "iconPath": "images/tb_member.png",
+        "selectedIconPath": "images/tb_member_active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "downloadFile": 20000
+  },
+  "sitemapLocation": "sitemap.json"
+}

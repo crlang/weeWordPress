@@ -1,0 +1,63 @@
+/* pages/posts/detail.wxss */
+@import "../../libs/wxParse/wxParse.wxss";
+
+.container {
+}
+.posts-info {
+  padding: 30rpx;
+  background: #fff;
+}
+.posts-info .-title {
+  font-size: 32rpx;
+}
+.posts-info .-meta {
+  font-size: 24rpx;
+  color: #999;
+  padding: 20rpx 0;
+}
+.posts-info .-desc {
+  font-size: 28rpx;
+  background: #f9f9f9;
+  border-top: 2px solid #35495e;
+  padding: 30rpx;
+  margin-top: 30rpx;
+  line-height: 1.9;
+}
+
+.posts-info .-desc::before {
+  display: inline-block;
+  content: "";
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 30rpx;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDExOTUgMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNTYuMDE2IiBoZWlnaHQ9IjQ4Ij48ZGVmcz48c3R5bGUvPjwvZGVmcz48cGF0aCBkPSJNMTEyNS40IDk3Mi44MTVINjUxLjYzNlY2MzEuMTA2YzAtMTM5LjQwNCAxMi4wODMtMjQ4Ljc3MiAzNi4yNS0zMjguMTA4IDI0LjE2NS03OS4zMzYgNDkuMjk2LTEzMi4yOTggMTE1LjA1LTE5NS43NjZDODY4LjY5IDQzLjc2MyA5MTQuMzEzIDI0LjcxOCAxMDEwLjgyOCAwbDY3LjQyOCAxNDUuMDNjLTY3LjQyOCAyNS43NjctMTA4LjUwNyAzNy4yNi0xNzEuODY1IDEwMi45OTQtNjMuMzU4IDY1LjczNS02OC4wMyAxMjkuMzE2LTY4LjAzIDE4My45NjVoMjg3LjA0djU0MC44MjZ6bS02NTEuNjM2IDBIMFY2MzEuMTA2YzAtMTM5LjQwNCAxMi4wODMtMjQ4Ljc3MiAzNi4yNDktMzI4LjEwOCAyNC4xNjYtNzkuMzM2IDQ5LjI5Ni0xMzIuMjk4IDExNS4wNS0xOTUuNzY2QzIxNy4wNTQgNDMuNzYzIDI2Mi42NzYgMjQuNzE4IDM1OS4xOTIgMGw2Ny40MjggMTQ1LjAzYy02Ny40MjggMjUuNzY3LTEwOC41MDcgMzcuMjYtMTcxLjg2NSAxMDIuOTk0LTYzLjM1OCA2NS43MzUtNjguMDMxIDEyOS4zMTYtNjguMDMxIDE4My45NjVoMjg3LjA0djU0MC44MjZ6IiBmaWxsPSIjMzU0OTVlIi8+PC9zdmc+');
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.posts-info .posts-protect {
+  padding: 0 20rpx;
+  margin: 30rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 6rpx;
+  border: 1px solid #41B883;
+}
+
+.posts-info .-content {
+  padding: 20rpx 0;
+  line-height: 1.5;
+  color: #333;
+}
+
+.posts-info .-content view {
+  line-height: 1.5;
+}
+.posts-info .-content image {
+  margin: 20rpx 0;
+}
+.posts-info .-content .wxParse-p {
+  margin-bottom: 20rpx;
+}

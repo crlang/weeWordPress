@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="top-posts" wx:if="{{bannerData.length > 0}}">
+    <!-- 轮播图 -->
+    <swiper autoplay="true" autoplay="{{false}}">
+      <swiper-item wx:for="{{bannerData}}" wx:key="item.id">
+        <view class="tp-img" style="background-image: url('{{item.thumb}}')" data-id="{{item.id}}" bind:tap="bindPosts"></view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="articles-nav {{categoriesFixed ? 'is-actived' : ''}}" wx:if="{{categoriesData}}" id="articles-nav">
+    <scroll-view scroll-x>
+      <view class="an-item {{!categories ? 'is-actived' : ''}}" data-id="-1">推荐</view>
+      <view class="an-item {{categories == item.id ? 'is-actived' : ''}}" wx:for="{{categoriesData}}" bind:tap="bindCategory" wx:key="item.id" data-id="{{item.id}}">{{item.name}}</view>
+    </scroll-view>
+  </view>
+
+  <view class="articles-list" wx:if="{{postsData}}">
+    <block wx:if="{{postsData.length > 0}}">
+      <view class="al-item" wx:for="{{postsData}}" wx:key="item.id" data-id="{{item.id}}" bind:tap="bindPosts">
+        <view class="cont-prev">
+          <view class="title">{{item.title || '-'}}</view>
+          <view class="meta"><text>{{item.author_name || '-'}}</text> <text>{{item.date || '-'}}</text></view>
+        </view>
+        <view class="img-prev" style="background-image: url({{item.thumb}});"></view>
+      </view>
+    </block>
+    <block wx:else>
+      <import src="/templates/postsnone.wxml" />
+      <template is="postsnone" />
+    </block>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+<!--pages/retry/index.wxml-->
+<view class="container" bind:tap='bindReload'>
+  <image class="error-img" src="/images/icon_refresh.png" mode="widthFix"></image>
+  <view class='error-text'>网络开小差了，请点击重试</view>
+</view>

@@ -1,0 +1,6 @@
+<template name="postsnone">
+  <view class="posts-none">
+    <image src="/images/icon_empty.png" />
+    <text>数据为空</text>
+  </view>
+</template>

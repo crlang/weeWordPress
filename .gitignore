@@ -1,3 +1,8 @@
 # Build folder and log file
 build/
 build.log
+
+.vscode/
+
+# wechat config file
+project.config.json

@@ -1,0 +1,114 @@
+/* 全局样式重置 */
+ad, aria-component, audio, button, camera, canvas, checkbox, checkbox-group, cover-image, cover-view, editor, functional-page-navigator, icon, image, input, label, live-player, live-pusher, map, movable-area, movable-view, native-component, navigator, officical-account, open-data, picker, picker-view, picker-view-column, progress, radio, radio-group, rich-text, scroll-view, slider, swiper, swiper-item, switch, text, textarea, video, view, web-view {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+button, button[type=default] {
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  line-height: 1;
+  border-radius: 0;
+}
+
+button.button-hover, .button-hover, .button-hover[type=default] {
+  color: #fff;
+  background: #41B883;
+  opacity: 0.88;
+}
+
+button[disabled], button[disabled][type=default] {
+  background-color: #eee;
+  color: #999;
+}
+
+button::after, button[type=default]::after {
+  content: '';
+  border: none;
+  border-radius: 0;
+  transform: none;
+  display: none;
+}
+
+image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+page {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background: #f4f4f4;
+  color: #333;
+  font-size: 28rpx;
+  min-height: 100%;
+}
+
+/* 默认输入文字颜色 */
+.input-placeholder, .placeholderColor {
+  color: #999;
+}
+
+/* checkbox 样式 */
+checkbox.wx-checkbox-input {
+  -webkit-border-radius: 3rpx;
+  border-radius: 3rpx;
+  height: 28rpx;
+  width: 28rpx;
+  margin-top: -4rpx;
+}
+
+/* checkbox 选中后样式 */
+checkbox.wx-checkbox-input.wx-checkbox-input-checked {
+  background: #41B883;
+}
+
+/* checkbox 选中后图标样式  */
+checkbox.wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  background: transparent;
+  -ms-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.container {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #f4f4f4;
+}
+
+/* 全局样式重置  end */
+
+/* 列表数据为空 */
+.posts-none {
+  text-align: center;
+}
+.posts-none image {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 32rpx;
+}
+.posts-none text{
+  display: block;
+  color: #e6e6e6;
+}
