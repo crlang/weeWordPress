@@ -28,7 +28,11 @@ const miniProName = 'WordPress 小程序';
 // api 地址
 const siteUrl = "http://wploc.crlang.com";
 
+// 小程序 tabs 页面地址，默认
+const global_tabs_list = ['pages/index/index', 'pages/topic/index', 'pages/member/index'];
+
 module.exports = {
   siteUrl,
   miniProName,
+  global_tabs_list
 };

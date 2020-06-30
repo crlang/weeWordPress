@@ -4,7 +4,7 @@
     <!-- 轮播图 -->
     <swiper autoplay="true" autoplay="{{false}}">
       <swiper-item wx:for="{{bannerData}}" wx:key="item.id">
-        <view class="tp-img" style="background-image: url('{{item.thumb}}')" data-id="{{item.id}}" bind:tap="bindPosts"></view>
+        <view class="tp-img" style="background-image: url('{{item.featured_media_url}}')" data-id="{{item.id}}" bind:tap="bindPosts"></view>
       </swiper-item>
     </swiper>
   </view>
@@ -23,7 +23,7 @@
           <view class="title">{{item.title || '-'}}</view>
           <view class="meta"><text>{{item.author_name || '-'}}</text> <text>{{item.date || '-'}}</text></view>
         </view>
-        <view class="img-prev" style="background-image: url({{item.thumb}});"></view>
+        <view class="img-prev" style="background-image: url({{item.featured_media_url}});"></view>
       </view>
     </block>
     <block wx:else>

@@ -55,11 +55,8 @@ export function fixPostsList(list, detail = true) {
     if (item.content) item.content = item.content.rendered || '';
 
     item.title = item.title.rendered || '';
-    item.categories = [];
-    item.tags = [];
-    item.author_name = '匿名';
+    item.author_name = '互联网';
     item.author_avatar = '/images/default_avatar.png';
-    item.thumb = '/images/default_article.png';
 
     if (item._embedded) {
       if (item._embedded.author && item._embedded.author[0]) {
@@ -67,19 +64,27 @@ export function fixPostsList(list, detail = true) {
         item.author_avatar = item._embedded.author[0].avatar_urls[48] || item.author_avatar;
       }
 
-      if (item._embedded['wp:featuredmedia'] && item._embedded['wp:featuredmedia'][0]) {
-        item.thumb = item._embedded['wp:featuredmedia'][0].source_url || item.thumb;
+      if (!item.featured_media_url) {
+        item.featured_media_url = '/images/default_article.png';
+        if (item._embedded['wp:featuredmedia'] && item._embedded['wp:featuredmedia'][0]) {
+          item.featured_media_url = item._embedded['wp:featuredmedia'][0].source_url || item.thumb;
+        }
       }
 
       if (item._embedded['wp:term']) {
-        if (item._embedded['wp:term'][0]) {
-          for (let ia = 0; ia < item._embedded['wp:term'][0].length; ia++) {
-            item.categories.push(item._embedded['wp:term'][0][ia]);
+        if (!item.categories && !item.categories[0].name) {
+          if (item._embedded['wp:term'][0]) {
+            for (let ia = 0; ia < item._embedded['wp:term'][0].length; ia++) {
+              item.categories.push(item._embedded['wp:term'][0][ia]);
+            }
           }
         }
-        if (item._embedded['wp:term'][1]) {
-          for (let ib = 0; ib < item._embedded['wp:term'][1].length; ib++) {
-            item.tags.push(item._embedded['wp:term'][1][ib]);
+
+        if (!item.tags && !item.tags[0].name) {
+          if (item._embedded['wp:term'][1]) {
+            for (let ib = 0; ib < item._embedded['wp:term'][1].length; ib++) {
+              item.tags.push(item._embedded['wp:term'][1][ib]);
+            }
           }
         }
       }
@@ -282,7 +287,7 @@ export function request(url, method = 'get', data = {}) {
       success: function(res) {
         console.log('global success',res);
         if (res.errMsg === "request:ok" && res.statusCode === 200) return resolve(res.data);
-        if (res.statusCode === 404 || res.statusCode === 500) {
+        if (res.statusCode >= 500) {
           wx.redirectTo({
             url: '/pages/retry/index?url='+getCurrentPageUrl()
           });

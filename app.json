@@ -4,7 +4,8 @@
     "pages/topic/index",
     "pages/member/index",
     "pages/retry/index",
-    "pages/posts/detail"
+    "pages/posts/detail",
+    "pages/topic/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

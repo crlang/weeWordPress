@@ -1,0 +1,18 @@
+<!--pages/topic/detail.wxml-->
+<import src="../../libs/wxParse/wxParse.wxml" />
+<view class="container" wx:if="{{infoData}}">
+  <view class="pages-info">
+    <view class="-title">{{infoData.title || '-'}}</view>
+    <view class="-meta">
+      <image src="{{infoData.author_avatar || '/images/default_avatar.png'}}" mode="widthFix"></image>
+      <view class="s1">{{infoData.author_name || '-'}}</view>
+      <view class="s2">{{infoData.date || '-'}}</view>
+    </view>
+    <block wx:if="{{hasProtected}}">
+      <input type="text" placeholder="请输入专题密码" class="pages-protect" value="{{pagesPwd}}" bindinput="bindPwd" confirm-type="done" bindconfirm="getTopic"></input>
+    </block>
+    <view class="-content">
+      <template is="wxParse" data="{{wxParseData: infoContent.nodes}}" />
+    </view>
+  </view>
+</view>

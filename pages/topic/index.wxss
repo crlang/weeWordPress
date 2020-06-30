@@ -1,1 +1,39 @@
 /* pages/topic/index.wxss */
+.container {
+}
+.topic-list {
+}
+.topic-list .tl-item {
+  background: #fff;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+}
+.topic-list .tl-title ,
+.topic-list .tl-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1.5;
+}
+.topic-list .tl-title {
+  color: #35495e;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+.topic-list .tl-desc {
+  font-size: 24rpx;
+  color: #999;
+}
+.topic-list .tl-thumb {
+  margin-top: 20rpx;
+  width: 100%;
+  height: 460rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.topic-list .tl-thumb image {
+  width: 100%;
+  height: 100%;
+}

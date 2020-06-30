@@ -1,4 +1,5 @@
 // pages/retry/index.js
+import {global_tabs_list} from "../../weeWPress.config";
 
 Page({
 
@@ -25,7 +26,7 @@ Page({
   bindReload() {
     let url = this.data.url;
     let pageUrl = url.split('?')[0];
-    let tabsList = ['pages/index/index', 'pages/post/post', 'pages/topic/topic', 'pages/member/member'];
+    let tabsList = global_tabs_list;
     if (tabsList.includes(pageUrl)) {
       wx.switchTab({
         url: '/' + unescape(url)

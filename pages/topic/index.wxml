@@ -1,2 +1,10 @@
 <!--pages/topic/index.wxml-->
-<text>pages/topic/index.wxml</text>
+<view class="container">
+  <view class="topic-list" wx:if="{{pagesData.length > 0}}">
+    <view class="tl-item" wx:for="{{pagesData}}" wx:key="item.id" bind:tap="bindDetail" data-id="{{item.id}}">
+      <view class="tl-title">{{item.title || '-'}}</view>
+      <view class="tl-desc">{{item.excerpt || '-'}}</view>
+      <view class="tl-thumb"><image src="{{item.featured_media_url || '/images/default_article.png'}}" mode="aspectFill"></image></view>
+    </view>
+  </view>
+</view>
